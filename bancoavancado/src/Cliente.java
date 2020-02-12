@@ -4,6 +4,10 @@ public class Cliente {
     private String cpf;
     private String rg;
 
+    public Cliente(){
+
+    }
+
     public void Cliente(String nomeCliente, String sobrenome,String cpfCliente,String rg) {
         this.nome = nomeCliente;
         this.cpf = cpfCliente;

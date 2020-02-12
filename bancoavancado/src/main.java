@@ -9,20 +9,19 @@ public class main {
         cliente.setNome("luis");
         cliente.setCpf("123.321.988-72");
         cliente.setRg("00.890.008-X");
-        ContaPoupanca poupanca = new ContaPoupanca(465.98,789,cliente);
-        ContaCorrente corrente = new ContaCorrente(cliente1,100,500);
+        ContaPoupanca poupanca = new ContaPoupanca(465.98, 789, cliente);
+        ContaCorrente corrente = new ContaCorrente(cliente1, 6437, 300, 500);
 
-        System.out.println("---Banco 01---");
+        System.out.println("---Cliente 01---");
         System.out.println(poupanca.getCliente().getNome());
         poupanca.deposito(500.02);
-        poupanca.saque(965);
+        poupanca.saque(200);
         poupanca.recolherJuros();
         poupanca.verSaldo();
-        System.out.println("---Banco 02---");
+        System.out.println("---Cliente 02---");
         System.out.println(corrente.getCliente().getNome());
-        corrente.depositarCheque(120,"Trindade","12/02/2020");
+        corrente.depositarCheque(100, "Trindade", "12/02/2020");
         corrente.saque(450);
         corrente.verSaldo();
-
     }
 }

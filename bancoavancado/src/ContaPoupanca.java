@@ -7,7 +7,7 @@ public class ContaPoupanca extends Conta {
     private int numeroCliente;
 
 
-    public ContaPoupanca(double abertura,int clienteID,Cliente cliente) {
+    public ContaPoupanca(double abertura, int clienteID, Cliente cliente) {
         super.setSaldo(abertura);
         this.cliente = cliente;
         this.numeroCliente = clienteID;
@@ -30,34 +30,35 @@ public class ContaPoupanca extends Conta {
     }
 
     public void deposito(double depositar) {
-    double armazenar = getSaldo();
-            armazenar += depositar;
-            setSaldo(armazenar);
-            System.out.println("Deposito feito com sucesso!! Seu Saldo Atual: " + getSaldo());
+        double armazenar = getSaldo();
+        armazenar += depositar;
+        setSaldo(armazenar);
+        System.out.println("Deposito feito com sucesso!!");
 
     }
 
-    public void saque(double sacar) {
+    //nao é necessario  por o metodo saque porq ja tmeos na conta que estamos herdando
+//    public void saque(double sacar) {
+//
+//        if (sacar >= getSaldo()) {
+//            System.out.println("Valor do saque: "+sacar);
+//            System.out.println("Saldo insuficiente");
+//        } else {
+//            System.out.println("Valor do saque: "+sacar);
+//            setSaldo(getSaldo() - sacar);
+//            System.out.println("Saldo final: " +getSaldo());
+//        }
+//    }
+    public void recolherJuros() {
 
-        if (sacar >= getSaldo()) {
-            System.out.println("Valor do saque: "+sacar);
-            System.out.println("Saldo insuficiente");
-        } else {
-            System.out.println("Valor do saque: "+sacar);
-            setSaldo(getSaldo() - sacar);
-            System.out.println("Saldo final: " +getSaldo());
-        }
-    }
-    public void recolherJuros(){
-
-        double armazenar = getSaldo() ;
+        double armazenar = getSaldo();
         armazenar *= 0.9;
-        setSaldo(armazenar+getSaldo());
+        setSaldo(armazenar + getSaldo());
     }
 
-    public void verSaldo(){
+    public void verSaldo() {
 
-        System.out.println("Saldo Após rendimento: "+getSaldo());
+        System.out.println("Saldo Após rendimento: " + getSaldo());
     }
 
 }
